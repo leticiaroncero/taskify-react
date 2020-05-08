@@ -1,4 +1,6 @@
 var express = require("express");
+var session = require("express-session");
+var passport = require("./config/passport");
 
 
 // Sets up the Express App
@@ -6,17 +8,20 @@ var express = require("express");
 var app = express();
 var PORT = process.env.PORT || 3001;
 
-
-
 // Requiring our models for syncing
 var db = require("./models");
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+
 // Static directory
 app.use(express.static("public"));
+
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Routes
 // =============================================================
