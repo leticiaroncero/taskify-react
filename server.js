@@ -1,7 +1,7 @@
 var express = require("express");
 var session = require("express-session");
 var passport = require("./config/passport");
-
+var cors = require('cors')
 
 // Sets up the Express App
 // =============================================================
@@ -14,6 +14,7 @@ var db = require("./models");
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 // Static directory
 app.use(express.static("public"));
@@ -25,8 +26,9 @@ app.use(passport.session());
 
 // Routes
 // =============================================================
-// require("./routes/api-routes")(app);
-
+// require("./controllers/api_routes")(app);
+var apiRoutes = require("./controllers/api_routes");
+app.use(apiRoutes);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync().then(function() {
