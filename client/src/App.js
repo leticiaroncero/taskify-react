@@ -5,8 +5,9 @@ import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // import Homepage from "./pages/Homepage";
 // import Projects from "./pages/Projects";
+import NavTabs from "./components/NavTabs";
 import Signup from "./pages/Signup";
-// import Login from "./pages/Login";
+import Login from "./pages/Login";
 
 class App extends Component {
 
@@ -14,25 +15,29 @@ class App extends Component {
     loggedIn: false
   }
 
+  updateUser = (userObject) => {
+    this.setState(userObject)
+  }
+
   render() {
-  return (
-    <Router>
+    return (
+      <Router>
         <div>
-          {/* <NavTabs updateUser={this.updateUser} loggedIn={this.state.loggedIn} /> */}
+          <NavTabs updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
           <Route exact path="/signup" component={Signup} />
-          {/* <Route exact path="/login" render={() =>
+          <Route exact path="/login" render={() =>
             <Login
               updateUser={this.updateUser}
             />} />
-          <Route exact path="/" render={() =>
-            <Homepage
-              loggedIn={this.state.loggedIn}
-            />} /> */}
-          {/* <Route exact path="/projects" component={Projects} /> */}
+          {/* // <Route exact path="/" render={() => */}
+          {/* //   <Homepage */}
+          {/* //     loggedIn={this.state.loggedIn} */}
+          {/* //   />} /> */} */}
+          {/* // <Route exact path="/projects" component={Projects} /> */}
         </div>
       </Router>
-  );
-}
+    );
+  }
 }
 
 export default App;
