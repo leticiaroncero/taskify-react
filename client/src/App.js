@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 // import Homepage from "./pages/Homepage";
-// import Projects from "./pages/Projects";
+import Projects from "./pages/Projects";
 import NavTabs from "./components/NavTabs";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -33,7 +33,7 @@ class App extends Component {
           {/* //   <Homepage */}
           {/* //     loggedIn={this.state.loggedIn} */}
           {/* //   />} /> */} */}
-          {/* // <Route exact path="/projects" component={Projects} /> */}
+          <Route exact path="/projects" component={Projects} />
         </div>
       </Router>
     );
