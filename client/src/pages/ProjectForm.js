@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 class ProjectForm extends Component {
 
     state = {
@@ -8,12 +9,24 @@ class ProjectForm extends Component {
         description: ""
     }
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
+    onChangeTitle = event => {
+      this.setState({
+        title: event.target.value
+      })
+    };
+
+    onChangeDes = event => {
+      this.setState({
+        description: event.target.value
+      })
+    };
+
+  // handleInputChange = event => {
+  //   const { name, value } = event.target;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
 
   handleNewProject = event => {
     event.preventDefault();
@@ -37,32 +50,25 @@ class ProjectForm extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6 col-md-offset-3">
-            <h2>Sign Up Form</h2>
-            <form className="signup">
-              <div className="form-group">
-                <label htmlFor="exampleInputEmail1">Email address</label>
-                <input type="email" className="form-control" id="email-input" placeholder="Email" name="email" value={this.state.email} onChange={this.handleInputChange} />
-              </div>
-              <div className="form-group">
-                <label htmlFor="exampleInputPassword1">Password</label>
-                <input type="password" className="form-control" id="password-input" placeholder="Password" name="password" value={this.state.password} onChange={this.handleInputChange} />
-              </div>
-              <div style={{ display: "none" }} id="alert" className="alert alert-danger" role="alert">
-                <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                <span className="sr-only">Error:</span> <span className="msg"></span>
-              </div>
-              <button type="submit" className="btn btn-primary btn btn-default" onClick={this.handleSignup}>Sign Up</button>
-            </form>
-            <br />
-            <p>Or log in <Link to="/login">here</Link>.</p>
-          </div>
-        </div>
-      </div>
-    );
+      <Form>
+  <Form.Group controlId="formBasicTitle">
+    <Form.Label>Title</Form.Label>
+    <Form.Control type="string" placeholder="Enter Title" onChange={this.onChangeTitle} value={this.state.title}  />
+  
+  </Form.Group>
+
+  <Form.Group controlId="formBasicDescription">
+    <Form.Label>Description</Form.Label>
+    <Form.Control type="input" placeholder="Enter Description" value={this.state.description} onChange={this.onChangeDes} />
+  </Form.Group>
+  
+  <Button variant="primary" type="submit" onClick={this.handleNewProject}>
+    Submit
+  </Button>
+  </Form>
+    )
   }
 }
 
-export default Signup;
+export default ProjectForm;
+

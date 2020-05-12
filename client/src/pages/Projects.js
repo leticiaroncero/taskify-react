@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button'
 class Projects extends Component {
     render() {
         return (
-            <Button href="/login">Create New Project</Button>
+            <Button href="/projects/add">Create New Project</Button>
         )
     }
 }
