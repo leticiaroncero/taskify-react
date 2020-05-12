@@ -46,6 +46,22 @@ router.get("/api/user_data", isAuthenticated, function (req, res) {
         });
     }
 })
+
+router.get("/projects", isAuthenticated, function(req, res) {
+    db.Project.findAll({
+        raw: true,
+        where: {
+            UserId: req.user.id
+        }
+    }).then(function(data) {
+        var hbsObj = {
+            projects: data,
+            user: req.user
+        }
+        res.render("projects", hbsObj);
+    });
+});
+
 router.post("/api/projects", isAuthenticated, function (req, res) {
     db.Project.create({
         title: req.body.title,

@@ -9,5 +9,8 @@ export default {
   },
   addProject: function (newProject) {
     return axios.post("/api/projects", newProject)
+  },
+  getProjects: function (projects) {
+    return axios.get("/projects", projects)
   }
 }
