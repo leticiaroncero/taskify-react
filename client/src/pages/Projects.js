@@ -4,27 +4,29 @@ import API from "../utils/API";
 import ProjectCard from "../components/ProjectCard"
 class Projects extends Component {
 
-state = {
-    projects : []
-}
+  state = {
+    projects: []
+  }
 
-componentDidMount = () => {
+  componentDidMount = () => {
     this.handleProjects(this.state.projects);
   }
 
- handleProjects = id => {
-  API.getProjects().then(res => {
-    this.setState({projects: res.data.results })
-  })
-    .catch(err => console.log(err));
-}
+  handleProjects = id => {
+    console.log("handleProjects")
+    API.getProjects()
+      .then(res => {
+        this.setState({ projects: res.data })
+      })
+      .catch(err => console.log(err));
+  }
 
-    render() {
-        return (
-       <div>
+  render() {
+    return (
+      <div>
         <Button href="/projects/add">Create New Project</Button>
 
-          <div className="row">
+        <div className="row">
           {this.state.projects.map(project => {
             return (
               <ProjectCard
@@ -32,13 +34,13 @@ componentDidMount = () => {
                 id={project.UserId}
                 title={project.title}
                 description={project.description}
-                
+
               />)
           })}
         </div>
-        </div>
-        ) 
-    }
+      </div>
+    )
+  }
 
 }
 
