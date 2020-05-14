@@ -11,6 +11,6 @@ export default {
     return axios.post("/api/projects", newProject)
   },
   getProjects: function (projects) {
-    return axios.get("/projects", projects)
+    return axios.get("/api/projects", projects)
   }
 }

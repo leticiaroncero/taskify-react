@@ -42,7 +42,7 @@ class ProjectForm extends Component {
       .then(res => {
         if (res.data) {
         //   console.log(res.data)
-          window.location.replace("/project");
+          window.location.replace("/projects");
         }
       })
       .catch(err => console.log(err));

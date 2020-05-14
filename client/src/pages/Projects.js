@@ -13,7 +13,8 @@ componentDidMount = () => {
   }
 
  handleProjects = id => {
-  API.getProjects().then(res => {
+  API.getProjects()
+  .then(res => {
     this.setState({projects: res.data.results })
   })
     .catch(err => console.log(err));
