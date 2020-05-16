@@ -54,8 +54,7 @@ router.get("/api/projects", isAuthenticated, function(req, res) {
             UserId: req.user.id
         }
     }).then(function(data) {
-        res.json(data)
-        
+        res.json(data);
     });
 
 });
