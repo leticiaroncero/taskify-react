@@ -31,6 +31,7 @@ class Projects extends Component {
             return (
               <ProjectCard
                 key={project.id}
+                project_id={project.id}
                 id={project.UserId}
                 title={project.title}
                 description={project.description}

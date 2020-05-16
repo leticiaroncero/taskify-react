@@ -13,7 +13,8 @@ class ProjectCard extends Component {
                       <Card.Text>
                         {this.props.description}
                       </Card.Text>
-                      <Button variant="primary">Launch</Button>
+                      <Button href={"/projects/" + this.props.project_id}>Launch</Button>
+                      
                     </Card.Body>
                     </Card>
                   )

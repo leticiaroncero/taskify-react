@@ -59,6 +59,18 @@ router.get("/api/projects", isAuthenticated, function(req, res) {
 
 });
 
+router.get("/api/projects/:id", isAuthenticated, function(req, res) {
+    db.Task.findAll({
+        raw: true,
+        where: {
+            ProjectId: req.params.id
+        }
+    }).then(function(data) {
+        res.json(data);
+    });
+
+});
+
 router.post("/api/projects", isAuthenticated, function (req, res) {
     db.Project.create({
         title: req.body.title,
@@ -72,6 +84,8 @@ router.post("/api/projects", isAuthenticated, function (req, res) {
             res.status(401).json(err);
         });
 });
+
+
 router.post("/api/projects/:id", isAuthenticated, function (req, res) {
     db.Task.create({
         title: req.body.title,
