@@ -30,7 +30,7 @@ router.post("/api/signup", function (req, res) {
 // Route for logging user out
 router.get("/logout", function (req, res) {
     req.logout();
-    res.redirect("/");
+    res.status(200).end();
 });
 // Route for getting some data about our user to be used client side
 router.get("/api/user_data", isAuthenticated, function (req, res) {
@@ -47,28 +47,28 @@ router.get("/api/user_data", isAuthenticated, function (req, res) {
     }
 })
 
-router.get("/api/projects", isAuthenticated, function(req, res) {
+router.get("/api/projects", isAuthenticated, function (req, res) {
     db.Project.findAll({
         raw: true,
         where: {
             UserId: req.user.id
         }
-    }).then(function(data) {
+    }).then(function (data) {
         res.json(data);
     });
 
 });
 
-router.get("/api/projects/:id", isAuthenticated, function(req, res) {
+router.get("/api/projects/:id", isAuthenticated, function (req, res) {
+    console.log("is this working?: " + req.params.id)
     db.Task.findAll({
-        raw: true,
+        // raw: true,
         where: {
             ProjectId: req.params.id
         }
-    }).then(function(data) {
+    }).then(function (data) {
         res.json(data);
     });
-
 });
 
 router.post("/api/projects", isAuthenticated, function (req, res) {

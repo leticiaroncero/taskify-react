@@ -31,7 +31,7 @@ class Login extends Component {
     API.login(credentials)
             .then(res => {
                 this.setState({
-                    redirectTo: '/'
+                    redirectTo: '/projects'
                 })
                 this.props.updateUser({ loggedIn: true })
             })
