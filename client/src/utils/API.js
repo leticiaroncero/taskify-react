@@ -15,5 +15,8 @@ export default {
   },
   getTasks: function (projectId) {
     return axios.get("/api/projects/" + projectId);
+  },
+  addTask: function ( projectId, newTask) {
+    return axios.post("/api/projects/" + projectId, newTask)
   }
 }

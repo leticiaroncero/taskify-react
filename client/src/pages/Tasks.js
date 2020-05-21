@@ -5,12 +5,14 @@ import Col from 'react-bootstrap/Col'
 import API from "../utils/API";
 import TaskCard from "../components/TaskCard";
 
+
 class Tasks extends Component {
 
     state = {
         toDo: [],
         inProgress: [],
-        done: []
+        done: [],
+        projectId: window.location.pathname.split("/")[2] 
     }
 
     componentDidMount = () => {
@@ -21,8 +23,8 @@ class Tasks extends Component {
     handleTasks = () => {
         console.log("I'm here")
         console.log(this.state)
-        var projectId = window.location.pathname.split("/")[2];
-        API.getTasks(projectId)
+        //var projectId = window.location.pathname.split("/")[2];
+        API.getTasks(this.state.projectId)
             .then(res => {
                 console.log(res.data)
                 this.handleStatus(res.data);
@@ -57,7 +59,7 @@ class Tasks extends Component {
     render() {
         return (
             <div>
-                <Button href="#">Create New Task</Button>
+                <Button href={ this.state.projectId +"/tasks/add"}>Create New Task</Button>
 
                 <Row>
                     <Col sm style={this.style}><h1>To do</h1>
