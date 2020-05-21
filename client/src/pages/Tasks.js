@@ -8,7 +8,9 @@ import TaskCard from "../components/TaskCard";
 class Tasks extends Component {
 
     state = {
-        tasks: []
+        toDo: [],
+        inProgress: [],
+        done: []
     }
 
     componentDidMount = () => {
@@ -23,9 +25,26 @@ class Tasks extends Component {
         API.getTasks(projectId)
             .then(res => {
                 console.log(res.data)
-                this.setState({ tasks: res.data })
+                this.handleStatus(res.data);
             })
             .catch(err => console.log(err));
+    }
+
+    handleStatus = tasks => {
+        var todoTasks = tasks.filter(function(task) {
+            return task.status === "to-do";
+        });
+        var inProgressTasks = tasks.filter(function(task) {
+            return task.status === "in-progress";
+        });
+        var doneTasks = tasks.filter(function(task) {
+            return task.status === "done";
+        });
+        this.setState({
+            toDo: todoTasks,
+            inProgress: inProgressTasks,
+            done: doneTasks
+        });
     }
 
     style = {
@@ -33,7 +52,7 @@ class Tasks extends Component {
         borderRadius: "3px",
         border: "1px",
         // maxHeight: "100%"
-    };
+    }
 
     render() {
         return (
@@ -42,7 +61,8 @@ class Tasks extends Component {
 
                 <Row>
                     <Col sm style={this.style}><h1>To do</h1>
-                        {this.state.tasks.map(task => {
+                        {/* {this.handleStatus("to-do")} */}
+                        {this.state.toDo.map(task => {
                             return (
                                 <TaskCard
                                     key={task.id}
@@ -50,8 +70,26 @@ class Tasks extends Component {
                                     status={task.status} />
                             )
                         })}</Col>
-                    <Col sm><h1>In Progress</h1></Col>
-                    <Col sm><h1>Done</h1></Col>
+                    <Col sm style={this.style}><h1>In Progress</h1>
+                        {this.state.inProgress.map(task => {
+                            return (
+                                <TaskCard
+                                    key={task.id}
+                                    title={task.title}
+                                    status={task.status} />
+                            )
+                        })}
+                    </Col>
+                    <Col sm style={this.style}><h1>Done</h1>
+                        {this.state.done.map(task => {
+                            return (
+                                <TaskCard
+                                    key={task.id}
+                                    title={task.title}
+                                    status={task.status} />
+                            )
+                        })}
+                    </Col>
                 </Row>
             </div>
         )

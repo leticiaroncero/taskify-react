@@ -60,7 +60,6 @@ router.get("/api/projects", isAuthenticated, function (req, res) {
 });
 
 router.get("/api/projects/:id", isAuthenticated, function (req, res) {
-    console.log("is this working?: " + req.params.id)
     db.Task.findAll({
         // raw: true,
         where: {
