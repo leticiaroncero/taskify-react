@@ -13,7 +13,7 @@ class TaskCard extends Component {
                 <Card>
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
-                        <DropdownButton id="dropdown-basic-button" title="Dropdown button">
+                        <DropdownButton id="dropdown-basic-button" title="Status">
                             <Dropdown.Item eventKey="1" active>To Do</Dropdown.Item>
                             <Dropdown.Item eventKey="2">In Progress</Dropdown.Item>
                             <Dropdown.Item eventKey="3">Done</Dropdown.Item>
