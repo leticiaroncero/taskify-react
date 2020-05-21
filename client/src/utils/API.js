@@ -14,6 +14,6 @@ export default {
     return axios.get("/api/projects")
   },
   getTasks: function (projectId) {
-    return axios.get("/api/projects/" + projectId)
+    return axios.get("/api/projects/" + projectId);
   }
 }
