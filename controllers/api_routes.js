@@ -89,7 +89,7 @@ router.post("/api/projects/:id", isAuthenticated, function (req, res) {
     db.Task.create({
         title: req.body.title,
         description: req.body.description,
-        due_date: req.body.date,
+        due_date: req.body.due_date,
         status: "to-do",
         ProjectId: req.params.id
     })
