@@ -3,7 +3,7 @@ import React, { Component } from "react";
 // import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-// import Homepage from "./pages/Homepage";
+ import Homepage from "./pages/Homepage";
 import Projects from "./pages/Projects";
 import NavTabs from "./components/NavTabs";
 import Signup from "./pages/Signup";
@@ -32,10 +32,10 @@ class App extends Component {
             <Login
               updateUser={this.updateUser}
             />} />
-          {/* // <Route exact path="/" render={() => */}
-          {/* //   <Homepage */}
-          {/* //     loggedIn={this.state.loggedIn} */}
-          {/* //   />} /> */} 
+           <Route exact path="/" render={() =>
+            <Homepage 
+               loggedIn={this.state.loggedIn} 
+             />} /> 
           <Route exact path="/projects" component={Projects} />
           <Route exact path="/projects/add" component={ProjectForm} />
           <Route exact path="/projects/:id(\d+)" component={Tasks} />
