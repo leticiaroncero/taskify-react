@@ -21,7 +21,7 @@ class NavTabs extends Component {
                         loggedIn: false,
                     })
                     this.setState({
-                        redirectTo: '/',
+                        redirectTo: '/homepage',
                     })
                 }
             }).catch(error => {
