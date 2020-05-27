@@ -47,6 +47,8 @@ router.get("/api/user_data", isAuthenticated, function (req, res) {
     }
 })
 
+
+
 router.get("/api/projects", isAuthenticated, function (req, res) {
     db.Project.findAll({
         raw: true,
@@ -60,8 +62,9 @@ router.get("/api/projects", isAuthenticated, function (req, res) {
 });
 
 router.get("/api/projects/:id", isAuthenticated, function (req, res) {
+    
     db.Task.findAll({
-        // raw: true,
+        raw: true,
         where: {
             ProjectId: req.params.id
         }
