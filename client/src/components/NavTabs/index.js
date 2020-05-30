@@ -17,6 +17,7 @@ class NavTabs extends Component {
             .then(response => {
 
                 if (response.status === 200) {
+                    console.log(response.status)
                     this.props.updateUser({
                         loggedIn: false,
                     })
