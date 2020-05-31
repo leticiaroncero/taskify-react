@@ -36,7 +36,7 @@ router.get("/logout", function (req, res) {
 router.get("/api/user_data", isAuthenticated, function (req, res) {
     if (!req.user) {
         // The user is not logged in, send back an empty object
-        res.json({});
+        res.status(400).end();
     } else {
         // Otherwise send back the user's email and id
         // Sending back a password, even a hashed password, isn't a good idea
@@ -58,7 +58,6 @@ router.get("/api/projects", isAuthenticated, function (req, res) {
     }).then(function (data) {
         res.json(data);
     });
-
 });
 
 router.get("/api/projects/:id", isAuthenticated, function (req, res) {
