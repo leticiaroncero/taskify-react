@@ -69,7 +69,8 @@ class Tasks extends Component {
                                 <TaskCard
                                     key={task.id}
                                     title={task.title}
-                                    status={task.status} />
+                                    status={task.status}
+                                    id={task.id}  />
                             )
                         })}</Col>
                     <Col sm style={this.style}><h1>In Progress</h1>
@@ -78,7 +79,8 @@ class Tasks extends Component {
                                 <TaskCard
                                     key={task.id}
                                     title={task.title}
-                                    status={task.status} />
+                                    status={task.status}
+                                    id={task.id} />
                             )
                         })}
                     </Col>
@@ -88,7 +90,8 @@ class Tasks extends Component {
                                 <TaskCard
                                     key={task.id}
                                     title={task.title}
-                                    status={task.status} />
+                                    status={task.status}
+                                    id={task.id}  />
                             )
                         })}
                     </Col>

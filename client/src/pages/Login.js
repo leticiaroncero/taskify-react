@@ -28,7 +28,7 @@ class Login extends Component {
         }
 
 
-    API.login(credentials)
+        API.login(credentials)
             .then(res => {
                 this.setState({
                     redirectTo: '/projects'
