@@ -103,6 +103,7 @@ router.post("/api/projects/:id", isAuthenticated, function (req, res) {
             res.status(400).json(err);
         });
 });
+
 router.put("/api/projects/:project_id/tasks/:task_id", function (req, res) {
     db.Task.update({ status: req.body.data }, {
         where: {
@@ -116,6 +117,7 @@ router.put("/api/projects/:project_id/tasks/:task_id", function (req, res) {
         }
     })
 });
+
 router.delete("/api/projects/:project_id", function (req, res) {
     db.Project.destroy({
         where: {

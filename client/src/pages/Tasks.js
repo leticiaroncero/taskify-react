@@ -12,7 +12,7 @@ class Tasks extends Component {
         toDo: [],
         inProgress: [],
         done: [],
-        projectId: window.location.pathname.split("/")[2] 
+        projectId: window.location.pathname.split("/")[2]
     }
 
     componentDidMount = () => {
@@ -33,13 +33,13 @@ class Tasks extends Component {
     }
 
     handleStatus = tasks => {
-        var todoTasks = tasks.filter(function(task) {
+        var todoTasks = tasks.filter(function (task) {
             return task.status === "to-do";
         });
-        var inProgressTasks = tasks.filter(function(task) {
+        var inProgressTasks = tasks.filter(function (task) {
             return task.status === "in-progress";
         });
-        var doneTasks = tasks.filter(function(task) {
+        var doneTasks = tasks.filter(function (task) {
             return task.status === "done";
         });
         this.setState({
@@ -47,6 +47,20 @@ class Tasks extends Component {
             inProgress: inProgressTasks,
             done: doneTasks
         });
+    }
+
+    handleChange = (eventKey, id) => {
+        console.log(eventKey)
+        console.log(id)
+        //console.log(this.props.match.params.id)
+        console.log(this.state.projectId)
+
+        API.updateTask(this.state.projectId, id, eventKey)
+            .then(res => {
+             console.log(res)
+             //this.handleStatus(res.data);
+            })
+            .catch(err => console.log(err));
     }
 
     style = {
@@ -59,7 +73,7 @@ class Tasks extends Component {
     render() {
         return (
             <div>
-                <Button href={ this.state.projectId +"/tasks/add"}>Create New Task</Button>
+                <Button href={this.state.projectId + "/tasks/add"}>Create New Task</Button>
 
                 <Row>
                     <Col sm style={this.style}><h1>To do</h1>
@@ -70,8 +84,9 @@ class Tasks extends Component {
                                     key={task.id}
                                     title={task.title}
                                     status={task.status}
-                                    id={task.id} 
-                                    projectId={this.state.projectId} />
+                                    id={task.id}
+                                    projectId={this.state.projectId}
+                                    handleChange={this.handleChange} />
                             )
                         })}</Col>
                     <Col sm style={this.style}><h1>In Progress</h1>
@@ -81,8 +96,9 @@ class Tasks extends Component {
                                     key={task.id}
                                     title={task.title}
                                     status={task.status}
-                                    id={task.id} 
-                                    projectId={this.state.projectId}/>
+                                    id={task.id}
+                                    projectId={this.state.projectId}
+                                    handleChange={this.handleChange} />
                             )
                         })}
                     </Col>
@@ -93,8 +109,9 @@ class Tasks extends Component {
                                     key={task.id}
                                     title={task.title}
                                     status={task.status}
-                                    id={task.id} 
-                                    projectId={this.state.projectId} />
+                                    id={task.id}
+                                    projectId={this.state.projectId}
+                                    handleChange={this.handleChange} />
                             )
                         })}
                     </Col>
