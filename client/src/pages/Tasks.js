@@ -70,7 +70,8 @@ class Tasks extends Component {
                                     key={task.id}
                                     title={task.title}
                                     status={task.status}
-                                    id={task.id}  />
+                                    id={task.id} 
+                                    projectId={this.state.projectId} />
                             )
                         })}</Col>
                     <Col sm style={this.style}><h1>In Progress</h1>
@@ -80,7 +81,8 @@ class Tasks extends Component {
                                     key={task.id}
                                     title={task.title}
                                     status={task.status}
-                                    id={task.id} />
+                                    id={task.id} 
+                                    projectId={this.state.projectId}/>
                             )
                         })}
                     </Col>
@@ -91,7 +93,8 @@ class Tasks extends Component {
                                     key={task.id}
                                     title={task.title}
                                     status={task.status}
-                                    id={task.id}  />
+                                    id={task.id} 
+                                    projectId={this.state.projectId} />
                             )
                         })}
                     </Col>
