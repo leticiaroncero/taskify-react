@@ -105,11 +105,12 @@ router.post("/api/projects/:id", isAuthenticated, function (req, res) {
 });
 
 router.put("/api/projects/:project_id/tasks/:task_id", function (req, res) {
-    db.Task.update({ status: req.body.data }, {
+    db.Task.update({ status: req.body.status },{
         where: {
             id: req.params.task_id
         }
     }).then(function (data) {
+        console.log(req.body)
         if (data.changedRows == 0) {
             return res.status(404).end();
         } else {

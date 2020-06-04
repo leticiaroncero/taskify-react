@@ -14,10 +14,10 @@ class TaskCard extends Component {
                 <Card>
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
-                        <DropdownButton onSelect={() => this.props.handleChange(this.props.status, this.props.id)} title="Status">
-                            <Dropdown.Item eventKey="to-do" >To Do</Dropdown.Item>
+                        <DropdownButton onSelect={(eventkey) => this.props.handleChange(eventkey, this.props.id)} title="Status">
+                            <Dropdown.Item eventkey="to-do" >To Do</Dropdown.Item>
                             <Dropdown.Item eventkey="in-progress" >In Progress</Dropdown.Item>
-                            <Dropdown.Item eventKey="done" >Done</Dropdown.Item>
+                            <Dropdown.Item eventkey="done" >Done</Dropdown.Item>
                         </DropdownButton>
                     </Card.Body>
                 </Card>
