@@ -26,6 +26,6 @@ export default {
     return axios.post("/api/projects/" + projectId, newTask)
   },
   updateTask: function ( projectId, taskId, newStatus ) {
-    return axios.put("/api/projects/" + projectId + "/tasks/" + taskId, newStatus)
+    return axios.put("/api/projects/" + projectId + "/tasks/" + taskId, {status: newStatus})
   }
 }

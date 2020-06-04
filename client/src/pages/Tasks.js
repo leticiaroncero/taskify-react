@@ -49,16 +49,18 @@ class Tasks extends Component {
         });
     }
 
-    handleChange = (eventKey, id) => {
-        console.log(eventKey)
+    handleChange = (eventkey, id) => {
+        console.log(eventkey)
         console.log(id)
+        //console.log(this.props.match.params.id)
         console.log(this.state.projectId)
 
-        API.updateTask(this.props.projectId, id, eventKey)
-            .then(function (res) {
-                // console.log(res)
-                // // window.location.reload()
+        API.updateTask(this.state.projectId, id, eventkey)
+            .then(res => {
+             console.log(res)
+             //this.handleStatus(res.data);
             })
+            .catch(err => console.log(err));
     }
 
     style = {

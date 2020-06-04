@@ -34,6 +34,7 @@ router.get("/logout", function (req, res) {
 });
 // Route for getting some data about our user to be used client side
 router.get("/api/user_data", isAuthenticated, function (req, res) {
+    console.log(req.user, "This is req.user")
     if (!req.user) {
         // The user is not logged in, send back an empty object
         res.status(400).end();
@@ -104,11 +105,12 @@ router.post("/api/projects/:id", isAuthenticated, function (req, res) {
 });
 
 router.put("/api/projects/:project_id/tasks/:task_id", function (req, res) {
-    db.Task.update({ status: req.body.data }, {
+    db.Task.update({ status: req.body.status },{
         where: {
             id: req.params.task_id
         }
     }).then(function (data) {
+        console.log(req.body)
         if (data.changedRows == 0) {
             return res.status(404).end();
         } else {
