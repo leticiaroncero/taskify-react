@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
 import { Redirect } from 'react-router-dom';
+import Button from "react-bootstrap/Button"
 
 class NavTabs extends Component {
 
@@ -22,7 +23,7 @@ class NavTabs extends Component {
                         loggedIn: false,
                     })
                     this.setState({
-                        redirectTo: '/homepage',
+                        redirectTo: '/',
                     })
                 }
             }).catch(error => {
@@ -54,9 +55,10 @@ class NavTabs extends Component {
                         </Link>
                                 </li>
                                 <li className="nav-item active">
-                                    <Link to="#" className="nav-link topic" onClick={this.handleLogout}>
+                                <Button variant="primary" onClick={this.handleLogout}>Logout</Button>
+                                    {/* <Link to={{ pathname: '/' }} className="nav-link topic" onClick={this.handleLogout}>
                                         Logout
-                                </Link>
+                                </Link> */}
                                 </li>
                             </Fragment>) : (
                                 <Fragment>
