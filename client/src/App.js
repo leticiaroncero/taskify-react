@@ -13,6 +13,7 @@ import Tasks from "./pages/Tasks";
 import TaskForm from "./pages/TaskForm";
 import API from "./utils/API"
 
+
 class App extends Component {
 
   state = {
@@ -37,7 +38,7 @@ class App extends Component {
       }
     });
   }
-
+ 
   render() {
     return (
       <Router>
@@ -48,7 +49,7 @@ class App extends Component {
             <Login
               updateUser={this.updateUser}
             />} />
-          <Route exact path="/homepage" render={() =>
+          <Route exact path="/" render={() =>
             <Homepage
               loggedIn={this.state.loggedIn}
             />} />

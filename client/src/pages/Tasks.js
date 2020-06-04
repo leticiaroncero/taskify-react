@@ -49,16 +49,15 @@ class Tasks extends Component {
         });
     }
 
-    handleChange = (eventkey, id) => {
-        console.log(eventkey)
+    handleChange = (eventKey, id) => {
+        console.log(eventKey)
         console.log(id)
         //console.log(this.props.match.params.id)
         console.log(this.state.projectId)
 
-        API.updateTask(this.state.projectId, id, eventkey)
+        API.updateTask(this.state.projectId, id, eventKey)
             .then(res => {
-             console.log(res)
-             //this.handleStatus(res.data);
+             this.handleTasks();
             })
             .catch(err => console.log(err));
     }
