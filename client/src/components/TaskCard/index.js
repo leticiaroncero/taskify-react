@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import "./style.css";
+import "./style.css";
 import Card from 'react-bootstrap/Card';
 // import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -19,6 +19,7 @@ class TaskCard extends Component {
                             <Dropdown.Item eventKey="in-progress" >In Progress</Dropdown.Item>
                             <Dropdown.Item eventKey="done" >Done</Dropdown.Item>
                         </DropdownButton>
+                        <i className="fa fa-trash fa-lg circle-icon a" aria-hidden="true" onClick={() => this.props.handleDelete(this.props.id)}></i>
                     </Card.Body>
                 </Card>
 
