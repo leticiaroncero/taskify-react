@@ -14,12 +14,18 @@ class TaskCard extends Component {
                 <Card>
                     <Card.Body>
                         <Card.Title>{this.props.title}</Card.Title>
-                        <DropdownButton onSelect={(eventKey) => this.props.handleChange(eventKey, this.props.id)} title="Status">
+                       <ul className="dropdown">
+                        <li>
+                        <DropdownButton onSelect={(eventKey) => this.props.handleChange(eventKey, this.props.id)}  title="Status">
                             <Dropdown.Item eventKey="to-do" >To Do</Dropdown.Item>
                             <Dropdown.Item eventKey="in-progress" >In Progress</Dropdown.Item>
                             <Dropdown.Item eventKey="done" >Done</Dropdown.Item>
                         </DropdownButton>
-                        <i className="fa fa-trash fa-lg circle-icon a" aria-hidden="true" onClick={() => this.props.handleDelete(this.props.id)}></i>
+                        </li>
+                        <li>  
+                        <i className="fa fa-trash fa-lg circle-icon " aria-hidden="true" onClick={() => this.props.handleDelete(this.props.id)}></i>
+                        </li>
+                        </ul>
                     </Card.Body>
                 </Card>
 
