@@ -57,8 +57,11 @@ class App extends Component {
           <Route exact path="/projects/add" component={ProjectForm} />
           <Route exact path="/projects/:id(\d+)" component={Tasks} />
           <Route exact path="/projects/:id(\d+)/tasks/add" component={TaskForm}  />
+          <footer>
+           <p>Taskify &reg;</p>
+         </footer>
         </div>
-      </Router>
+        </Router>
     );
   }
 }

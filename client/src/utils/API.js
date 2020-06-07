@@ -31,4 +31,7 @@ export default {
   deleteTasks: function (taskId) {
     return axios.delete("/api/projects/tasks/"+ taskId );
   },
+  deleteProjects: function (projectId) {
+    return axios.delete("/api/projects/" + projectId);
+  }
 }
