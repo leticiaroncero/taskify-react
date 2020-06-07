@@ -2,12 +2,10 @@ import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
-import { Redirect } from 'react-router-dom';
-import Button from "react-bootstrap/Button";
-import {withRouter} from 'react-router-dom'
+import Button from "react-bootstrap/Button"
+import { withRouter } from "react-router-dom";
 
 class NavTabs extends Component {
-
 
     handleLogout = event => {
         event.preventDefault();
@@ -20,10 +18,8 @@ class NavTabs extends Component {
                     this.props.updateUser({
                         loggedIn: false,
                     })
-                    this.history.push("/");
-                    // this.setState({
-                    //     redirectTo: '/',
-                    
+                    this.props.history.push("/");
+                   
                 }
             }).catch(error => {
                 console.log(error);
@@ -32,7 +28,7 @@ class NavTabs extends Component {
     }
 
     render() {
-        
+       
         return (
 
             <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
@@ -52,10 +48,9 @@ class NavTabs extends Component {
                         </Link>
                                 </li>
                                 <li className="nav-item active">
-                                <Button variant="primary" onClick={this.handleLogout}>Logout</Button>
-                                    {/* <Link to={{ pathname: '/' }} className="nav-link topic" onClick={this.handleLogout}>
+                                    <Link to={{ pathname: '/' }} className="nav-link topic" onClick={this.handleLogout}>
                                         Logout
-                                </Link> */}
+                                </Link> 
                                 </li>
                             </Fragment>) : (
                                 <Fragment>
@@ -77,5 +72,4 @@ class NavTabs extends Component {
         );
     }
 }
-
 export default withRouter(NavTabs);
