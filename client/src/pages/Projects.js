@@ -21,6 +21,17 @@ class Projects extends Component {
       .catch(err => console.log(err));
   }
 
+  handleDelete = id => {
+    console.log("projectid", id);
+    
+     API.deleteProjects(id)
+        .then(result => {
+      this.handleProjects();
+    })
+    .catch(err => console.log(err));
+
+}
+
   render() {
     return (
       <div>
@@ -35,7 +46,7 @@ class Projects extends Component {
                 id={project.UserId}
                 title={project.title}
                 description={project.description}
-
+                handleDelete={this.handleDelete}
               />)
           })}
         </div>

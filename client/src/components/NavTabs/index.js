@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
-import Button from "react-bootstrap/Button"
 import { withRouter } from "react-router-dom";
 
 class NavTabs extends Component {
