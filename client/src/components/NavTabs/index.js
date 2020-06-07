@@ -2,14 +2,10 @@ import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
-import { Redirect } from 'react-router-dom';
 import Button from "react-bootstrap/Button"
+import { withRouter } from "react-router-dom";
 
 class NavTabs extends Component {
-
-    state = {
-        redirectTo: null
-    }
 
     handleLogout = event => {
         event.preventDefault();
@@ -22,9 +18,8 @@ class NavTabs extends Component {
                     this.props.updateUser({
                         loggedIn: false,
                     })
-                    this.setState({
-                        redirectTo: '/',
-                    })
+                    this.props.history.push("/");
+                   
                 }
             }).catch(error => {
                 console.log(error);
@@ -33,9 +28,7 @@ class NavTabs extends Component {
     }
 
     render() {
-        if (this.state.redirectTo) {
-            return <Redirect to={{ pathname: this.state.redirectTo }} />
-        }
+       
         return (
 
             <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
@@ -80,5 +73,4 @@ class NavTabs extends Component {
         );
     }
 }
-
-export default NavTabs;
+export default withRouter(NavTabs);
