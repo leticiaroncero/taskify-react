@@ -128,6 +128,7 @@ router.delete("/api/projects/:project_id", function (req, res) {
         res.json(data);
     });
 });
+
 router.delete("/api/projects/tasks/:task_id", function (req, res) {
     db.Task.destroy({
         where: {

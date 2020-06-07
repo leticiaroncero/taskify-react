@@ -48,10 +48,9 @@ class NavTabs extends Component {
                         </Link>
                                 </li>
                                 <li className="nav-item active">
-                                <Button variant="primary" onClick={this.handleLogout}>Logout</Button>
-                                    {/* <Link to={{ pathname: '/' }} className="nav-link topic" onClick={this.handleLogout}>
+                                    <Link to={{ pathname: '/' }} className="nav-link topic" onClick={this.handleLogout}>
                                         Logout
-                                </Link> */}
+                                </Link> 
                                 </li>
                             </Fragment>) : (
                                 <Fragment>

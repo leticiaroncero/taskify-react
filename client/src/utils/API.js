@@ -27,5 +27,8 @@ export default {
   },
   updateTask: function ( projectId, taskId, newStatus ) {
     return axios.put("/api/projects/" + projectId + "/tasks/" + taskId, {status: newStatus})
-  }
+  },
+  deleteTasks: function (taskId) {
+    return axios.delete("/api/projects/tasks/"+ taskId );
+  },
 }
