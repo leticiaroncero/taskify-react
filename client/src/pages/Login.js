@@ -37,14 +37,20 @@ class Login extends Component {
             })
             .catch(err => console.log(err));
     }
+    style= {
+        borderRadius: "4px",
+        border: "20px",
+        justifyContent: "center",
+        backgroundColor: "#28cc70"
+    }
 
     render() {
         if (this.state.redirectTo) {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         }
         return (
-            <div className="container">
-                <div className="row">
+            <div className="container" >
+                <div className="row" style={this.style}>
                     <div className="col-md-6 col-md-offset-3">
                         <h2>Login Form</h2>
                         <form className="login">
