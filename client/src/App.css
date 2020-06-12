@@ -42,8 +42,9 @@ html, body {
 .main {
   min-height:100% ;
   top: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 20px; 
   position: relative;
+  padding-left: 250px;
 }
 .footer {
   position: absolute;
@@ -54,4 +55,7 @@ html, body {
   height: 50px;
   text-align: center;
   left: 0px;
+}
+.footer > p {
+  padding-top: 5px;
 }

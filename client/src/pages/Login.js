@@ -40,8 +40,14 @@ class Login extends Component {
     style= {
         borderRadius: "4px",
         border: "20px",
+        maxWidth: "585px",
+        backgroundColor: "#f5deb3",
+        color:"#686868",
+        paddingTop: "10px",
+        position: "relative",
         justifyContent: "center",
-        backgroundColor: "#28cc70"
+        boxShadow: "rgba(0,0,0,0.1) 0 0 10px"
+
     }
 
     render() {
@@ -63,7 +69,7 @@ class Login extends Component {
                                 <label htmlFor="exampleInputPassword1">Password</label>
                                 <input type="password" className="form-control" id="password-input" placeholder="Password" name="password" value={this.state.password} onChange={this.handleInputChange} />
                             </div>
-                            <button type="submit" className="btn btn-primary btn btn-default" onClick={this.handleLogin}>Log In</button>
+                            <button type="submit" className="btn btn-secondary btn btn-default" onClick={this.handleLogin}>Log In</button>
                         </form>
                         <br />
                         <p>Or sign up <a href="/signup">here</a>.</p>
