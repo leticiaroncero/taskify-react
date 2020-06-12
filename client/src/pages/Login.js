@@ -50,6 +50,7 @@ class Login extends Component {
         }
         return (
             <div className="container" >
+                <div className="main">
                 <div className="row" style={this.style}>
                     <div className="col-md-6 col-md-offset-3">
                         <h2>Login Form</h2>
@@ -68,6 +69,7 @@ class Login extends Component {
                         <p>Or sign up <a href="/signup">here</a>.</p>
                     </div>
                 </div>
+             </div>
             </div>
         );
     }

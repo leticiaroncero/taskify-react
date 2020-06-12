@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+html, body {
+  height: 100%;
+}
+.main {
+  min-height:100% ;
+  top: 40px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  background: #303036;
+  color: #686868;
+  height: 50px;
+  text-align: center;
+  left: 0px;
+}
