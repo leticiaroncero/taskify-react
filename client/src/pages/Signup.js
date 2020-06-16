@@ -45,8 +45,7 @@ class Signup extends Component {
     paddingTop: "10px",
     position: "relative",
     justifyContent: "center",
-    boxShadow: "rgba(0,0,0,0.1) 0 0 10px"
-
+    boxShadow: "rgba(0,0,0,0.1) 0 0 10px",
 }
 
   render() {

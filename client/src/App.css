@@ -36,15 +36,20 @@
     transform: rotate(360deg);
   }
 }
-html, body {
+ body {
   height: 100%;
+  background-image: url(grey-background.jpg);
+  overflow: hidden;
+  background-size: cover;
 }
+
 .main {
   min-height:100% ;
   top: 40px;
   padding-bottom: 20px; 
   position: relative;
-  padding-left: 250px;
+  padding-left: 350px;
+  padding-right: 100px;
 }
 .footer {
   position: absolute;
@@ -61,4 +66,16 @@ html, body {
 }
  p>a {
   color: #303036;
+}
+
+@media (max-width:420px) {
+
+  .main {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.newProject{
+  float: right;
+  margin: 10px;
 }
