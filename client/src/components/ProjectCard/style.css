@@ -9,9 +9,11 @@ a {
     border-radius: 12px;
     background-color: #E0C9CB;
     color: #4E4E4E;
+    width: 200px;
 }
- .btn {
-    background-color: #BA7E7E;
+.btn {
+    background-color: #BA7E7E; 
     border-radius: 10px; 
-    text-decoration: blanchedalmond;  
+    text-decoration: blanchedalmond; 
+    border: none;
 } 

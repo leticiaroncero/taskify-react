@@ -38,7 +38,7 @@
 }
  body {
   height: 100%;
-  background-image: url(grey-background.jpg);
+  background-image: url(bkg.png);
   overflow: hidden;
   background-size: cover;
 }
@@ -78,4 +78,5 @@
 .newProject{
   float: right;
   margin: 10px;
+  color: #303036;
 }

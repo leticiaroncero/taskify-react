@@ -41,7 +41,7 @@ class Login extends Component {
         borderRadius: "10px",
         border: "20px",
         maxWidth: "400px",
-        backgroundColor: "rgba(0,0,0,0.2)",
+        // backgroundColor: "rgba(0,0,0,0.2)",
         color:" #4E4E4E",
         paddingTop: "20px",
         margin: "20px",
