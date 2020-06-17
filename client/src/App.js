@@ -20,25 +20,25 @@ class App extends Component {
     loggedIn: false
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.getUser()
   }
 
   updateUser = (userObject) => {
     this.setState(userObject)
   }
-  
+
   getUser() {
     API.getUser()
-    .then(response => {
-      if (response.status === 200) {
-        this.setState({
-          loggedIn: true
-        })
-      }
-    });
+      .then(response => {
+        if (response.status === 200) {
+          this.setState({
+            loggedIn: true
+          })
+        }
+      });
   }
- 
+
   render() {
     return (
       <Router>
@@ -56,7 +56,7 @@ class App extends Component {
           <Route exact path="/projects" component={Projects} />
           <Route exact path="/projects/add" component={ProjectForm} />
           <Route exact path="/projects/:id(\d+)" component={Tasks} />
-          <Route exact path="/projects/:id(\d+)/tasks/add" component={TaskForm}  />
+          <Route exact path="/projects/:id(\d+)/tasks/add" component={TaskForm} />
         </div>
       </Router>
     );
