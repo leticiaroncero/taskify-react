@@ -35,7 +35,7 @@ class Projects extends Component {
   render() {
     return (
       <div>
-        <Button href="/projects/add">Create New Project</Button>
+        <Button className="newProject"href="/projects/add">Create New Project</Button>
 
         <div className="row">
           {this.state.projects.map(project => {

@@ -36,11 +36,23 @@ class Signup extends Component {
       })
       .catch(err => console.log(err));
   }
+  style= {
+    borderRadius: "4px",
+    border: "20px",
+    maxWidth: "585px",
+    backgroundColor: "#f5deb3",
+    color:"#686868",
+    paddingTop: "10px",
+    position: "relative",
+    justifyContent: "center",
+    boxShadow: "rgba(0,0,0,0.1) 0 0 10px",
+}
 
   render() {
     return (
       <div className="container">
-        <div className="row">
+        <div className="main">
+        <div className="row" style={this.style}>
           <div className="col-md-6 col-md-offset-3">
             <h2>Sign Up Form</h2>
             <form className="signup">
@@ -56,12 +68,13 @@ class Signup extends Component {
                 <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                 <span className="sr-only">Error:</span> <span className="msg"></span>
               </div>
-              <button type="submit" className="btn btn-primary btn btn-default" onClick={this.handleSignup}>Sign Up</button>
+              <button type="submit" className="btn btn-secondary btn btn-default" onClick={this.handleSignup}>Sign Up</button>
             </form>
             <br />
             <p>Or log in <Link to="/login">here</Link>.</p>
           </div>
         </div>
+      </div>
       </div>
     );
   }

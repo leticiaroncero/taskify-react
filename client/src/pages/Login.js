@@ -37,14 +37,27 @@ class Login extends Component {
             })
             .catch(err => console.log(err));
     }
+    style= {
+        borderRadius: "10px",
+        border: "20px",
+        maxWidth: "400px",
+        // backgroundColor: "rgba(0,0,0,0.2)",
+        color:" #4E4E4E",
+        paddingTop: "20px",
+        margin: "20px",
+        position: "relative",
+        justifyContent: "center",
+        boxShadow: "rgba(0,0,0,0.6) 0 0 10px", 
+    }
 
     render() {
         if (this.state.redirectTo) {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         }
         return (
-            <div className="container">
-                <div className="row">
+            <div className="container" >
+                <div className="main">
+                <div className="row" style={this.style}>
                     <div className="col-md-6 col-md-offset-3">
                         <h2>Login Form</h2>
                         <form className="login">
@@ -56,12 +69,13 @@ class Login extends Component {
                                 <label htmlFor="exampleInputPassword1">Password</label>
                                 <input type="password" className="form-control" id="password-input" placeholder="Password" name="password" value={this.state.password} onChange={this.handleInputChange} />
                             </div>
-                            <button type="submit" className="btn btn-primary btn btn-default" onClick={this.handleLogin}>Log In</button>
+                            <button type="submit" className="btn btn-secondary btn btn-default" onClick={this.handleLogin}>Log In</button>
                         </form>
                         <br />
                         <p>Or sign up <a href="/signup">here</a>.</p>
                     </div>
                 </div>
+             </div>
             </div>
         );
     }
