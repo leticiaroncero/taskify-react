@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import API from "../../utils/API";
-import Button from "react-bootstrap/Button"
 import { withRouter } from "react-router-dom";
 
 class NavTabs extends Component {
@@ -48,10 +47,9 @@ class NavTabs extends Component {
                         </Link>
                                 </li>
                                 <li className="nav-item active">
-                                <Button variant="primary" onClick={this.handleLogout}>Logout</Button>
-                                    {/* <Link to={{ pathname: '/' }} className="nav-link topic" onClick={this.handleLogout}>
+                                    <Link to={{ pathname: '/' }} className="nav-link topic" onClick={this.handleLogout}>
                                         Logout
-                                </Link> */}
+                                </Link> 
                                 </li>
                             </Fragment>) : (
                                 <Fragment>

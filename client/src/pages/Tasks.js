@@ -61,6 +61,17 @@ class Tasks extends Component {
             })
             .catch(err => console.log(err));
     }
+    
+    handleDelete = id => {
+        console.log(id);
+        
+         API.deleteTasks(id)
+            .then(result => {
+          this.handleTasks();
+        })
+        .catch(err => console.log(err));
+    
+    }
 
     style = {
         backgroundColor: "#ebecf0",
@@ -85,7 +96,8 @@ class Tasks extends Component {
                                     status={task.status}
                                     id={task.id}
                                     projectId={this.state.projectId}
-                                    handleChange={this.handleChange} />
+                                    handleChange={this.handleChange} 
+                                    handleDelete={this.handleDelete}/>
                             )
                         })}</Col>
                     <Col sm style={this.style}><h1>In Progress</h1>
@@ -97,7 +109,8 @@ class Tasks extends Component {
                                     status={task.status}
                                     id={task.id}
                                     projectId={this.state.projectId}
-                                    handleChange={this.handleChange} />
+                                    handleChange={this.handleChange} 
+                                    handleDelete={this.handleDelete}/>
                             )
                         })}
                     </Col>
@@ -110,7 +123,8 @@ class Tasks extends Component {
                                     status={task.status}
                                     id={task.id}
                                     projectId={this.state.projectId}
-                                    handleChange={this.handleChange} />
+                                    handleChange={this.handleChange} 
+                                    handleDelete={this.handleDelete}/>
                             )
                         })}
                     </Col>
