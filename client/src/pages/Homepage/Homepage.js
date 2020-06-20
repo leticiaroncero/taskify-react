@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col"
+import Button from "react-bootstrap/Button"
+import "./Homepage.css"
 
 class Homepage extends Component {
     render() {
@@ -10,10 +12,12 @@ class Homepage extends Component {
                     <div className="container">
                         <Row>
                             <Col>
-                                <p class="title">Taskify</p>
-                                <p class="subtitle">The easiest way to organize your tasks.</p>
+                                <p className="title">Taskify</p>
+                                <p className="subtitle">Manage all of your projects and tasks in one place,
+                                and track the progress you're making every step of the way.</p>
+                                <Button variant="success" size="lg" className="button">Sign Up</Button>
                             </Col>
-                            <Col>
+                            <Col md>
                                 <img src="https://via.placeholder.com/540x409.png"></img>
                             </Col>
                         </Row>
@@ -22,25 +26,26 @@ class Homepage extends Component {
                 <section>
                     <div className="container">
                         <Row>
-                            <Col>
-                                <p class="title">Organize</p>
-                                <p class="subtitle">Easily organize your tasks.</p>
+                            <Col md={6}>
+                                <img src="/homepage-projects.png"></img>
                             </Col>
-                            <Col>
-                                <img src="https://via.placeholder.com/500x300.png"></img>
+                            <Col md={{ span: 5, offset: 1 }}>
+                                <p className="title">Organize</p>
+                                <p className="subtitle">Easily organize your tasks. Start living stress-free.</p>
                             </Col>
                         </Row>
                     </div>
                 </section>
+
                 <section>
                     <div className="container">
                         <Row>
                             <Col>
-                                <img src="/homepage-projects.png"></img>
+                                <p className="title">Add multiple projects</p>
+                                <p className="subtitle">All your projects. One place.</p>
                             </Col>
                             <Col>
-                                <p class="title">Multiple projects</p>
-                                <p class="subtitle">All your projects. One place.</p>
+                                <img src="https://via.placeholder.com/500x300.png"></img>
                             </Col>
                         </Row>
                     </div>

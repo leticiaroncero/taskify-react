@@ -28,42 +28,6 @@
   color: #61dafb;
 }
 
-#hero {
-  background: linear-gradient(135deg, #0079bf, #5067c5);
-  display: block;
-  box-sizing: border-box;
-  font-family: "Charlie Text", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: white;
-  text-align: left;
-  padding: 50px;
-}
-
-.title {
-    font-size: 2em;
-    font-weight: bold;
-    margin-top: 1em;
-}
-
-.subtitle {
-  font-size: 1.5em;
-}
-
-#hero img {
-  max-width: 100%;
-  height: auto;
-}
-
-img {
-  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important
-}
-
-section {
-  margin-bottom: 50px;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
