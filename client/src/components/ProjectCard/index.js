@@ -13,7 +13,7 @@ class ProjectCard extends Component {
           <Card.Text>
             {this.props.description}
           </Card.Text>
-          <Button href={"/projects/" + this.props.project_id}>Launch</Button>
+          <Button variant="secondary" href={"/projects/" + this.props.project_id}>Launch</Button>
           <i className="fa fa-trash fa-lg circle-icon " aria-hidden="true" onClick={() => this.props.handleDelete(this.props.project_id)}></i>
         </Card.Body>
       </Card>
