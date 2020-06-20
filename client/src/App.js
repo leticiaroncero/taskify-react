@@ -3,7 +3,7 @@ import React, { Component } from "react";
 // import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Homepage from "./pages/Homepage";
+import Homepage from "./pages/Homepage/Homepage";
 import Projects from "./pages/Projects";
 import NavTabs from "./components/NavTabs";
 import Signup from "./pages/Signup";
@@ -20,25 +20,25 @@ class App extends Component {
     loggedIn: false
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.getUser()
   }
 
   updateUser = (userObject) => {
     this.setState(userObject)
   }
-  
+
   getUser() {
     API.getUser()
-    .then(response => {
-      if (response.status === 200) {
-        this.setState({
-          loggedIn: true
-        })
-      }
-    });
+      .then(response => {
+        if (response.status === 200) {
+          this.setState({
+            loggedIn: true
+          })
+        }
+      });
   }
- 
+
   render() {
     return (
       <Router>
