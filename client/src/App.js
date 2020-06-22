@@ -42,7 +42,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="main-container">
           <NavTabs updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" render={() =>
