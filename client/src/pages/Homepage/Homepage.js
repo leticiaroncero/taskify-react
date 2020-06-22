@@ -18,7 +18,7 @@ class Homepage extends Component {
                                 <Button variant="success" size="lg" className="button">Sign Up</Button>
                             </Col>
                             <Col md>
-                                <img src="https://via.placeholder.com/540x409.png"></img>
+                                <img src="https://via.placeholder.com/540x409.png" alt="placeholder"></img>
                             </Col>
                         </Row>
                     </div>
@@ -27,7 +27,7 @@ class Homepage extends Component {
                     <div className="container">
                         <Row>
                             <Col md={6}>
-                                <img src="/homepage-projects.png"></img>
+                                <img src="/homepage-projects.png" alt="tasks page"></img>
                             </Col>
                             <Col md={{ span: 5, offset: 1 }}>
                                 <p className="title">Organize</p>
@@ -45,7 +45,7 @@ class Homepage extends Component {
                                 <p className="subtitle">All your projects. One place.</p>
                             </Col>
                             <Col>
-                                <img src="https://via.placeholder.com/500x300.png"></img>
+                                <img src="https://via.placeholder.com/500x300.png" alt="placeholder1"></img>
                             </Col>
                         </Row>
                     </div>

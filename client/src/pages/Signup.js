@@ -37,15 +37,16 @@ class Signup extends Component {
       .catch(err => console.log(err));
   }
   style= {
-    borderRadius: "4px",
+    borderRadius: "10px",
     border: "20px",
-    maxWidth: "585px",
-    backgroundColor: "#f5deb3",
-    color:"#686868",
-    paddingTop: "10px",
+    maxWidth: "400px",
+    // backgroundColor: "#f5deb3",
+    color:"#4E4E4E",
+    paddingTop: "20px",
+    margin: "20px",
     position: "relative",
     justifyContent: "center",
-    boxShadow: "rgba(0,0,0,0.1) 0 0 10px",
+    boxShadow: "rgba(0,0,0,0.6) 0 0 10px",
 }
 
   render() {
