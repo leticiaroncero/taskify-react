@@ -66,8 +66,10 @@ body {
   position: absolute;
   width: 100%;
   bottom: 0px;
-  background: #303036;
-  color: #686868;
+  background: linear-gradient(135deg, #0079bf, #5067c5);
+  /* background: #303036; */
+  /* color: #686868; */
+  color: #ADD8E6;
   height: 50px;
   text-align: center;
   left: 0px;
