@@ -10,7 +10,8 @@ a {
     /* background-color: #E0C9CB; */
     background-color: #F0F8FF;
     color: #4E4E4E;
-    width: 200px;
+    width: 200px; 
+    height: 200px;
 }
 .btn {
     /* background-color: #BA7E7E;  */
