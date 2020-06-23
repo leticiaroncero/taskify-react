@@ -42,7 +42,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="main-container">
+        <div class="main-container">
           <NavTabs updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" render={() =>
@@ -56,12 +56,12 @@ class App extends Component {
           <Route exact path="/projects" component={Projects} />
           <Route exact path="/projects/add" component={ProjectForm} />
           <Route exact path="/projects/:id(\d+)" component={Tasks} />
-          <Route exact path="/projects/:id(\d+)/tasks/add" component={TaskForm}  />
+          <Route exact path="/projects/:id(\d+)/tasks/add" component={TaskForm} />
           <footer className="footer">
-           <p>Taskify &reg;</p>
-         </footer>
+            <p>Taskify &reg;</p>
+          </footer>
         </div>
-        </Router>
+      </Router>
     );
   }
 }
