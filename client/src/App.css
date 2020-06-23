@@ -36,21 +36,32 @@
     transform: rotate(360deg);
   }
 }
- body {
-  height: 100%;
-  background-image: url(bkg.png);
-  overflow: hidden;
-  background-size: cover;
+
+body {
+  /* height: 100%; */
+  /* background-image: url(bkg.png); */
+  background-color: #FCFAFF;
+  /* overflow: hidden; */
+  /* background-size: cover; */
+}
+
+.main-container {
+ min-height: 100vh; /* will cover the 100% of viewport */
+ /* overflow: hidden; */
+ /* display: block; */
+ position: relative;
+ padding-bottom: 50px; /* height of your footer to avoid things hiding behind */
 }
 
 .main {
-  min-height:100% ;
+  min-height: 100%;
   top: 40px;
-  padding-bottom: 20px; 
+  padding-bottom: 20px;
   position: relative;
   padding-left: 350px;
   padding-right: 100px;
 }
+
 .footer {
   position: absolute;
   width: 100%;
@@ -61,21 +72,23 @@
   text-align: center;
   left: 0px;
 }
+
 .footer > p {
   padding-top: 5px;
 }
- p>a {
+
+p > a {
   color: #303036;
 }
 
 @media (max-width:420px) {
-
   .main {
     padding-left: 20px;
     padding-right: 20px;
   }
 }
-.newProject{
+
+.newProject {
   float: right;
   margin: 10px;
   color: #303036;
