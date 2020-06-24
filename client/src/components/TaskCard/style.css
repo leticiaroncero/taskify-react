@@ -1,13 +1,14 @@
 .dropdown {
   list-style-type: none;
   padding-inline-start: 0px;
+  float: left; 
 }
 
-.dropdown li {
-  display: inline-block;
-  /* font-size: 20px;*/
-  padding: 20px; 
-}
+ /* .dropdown li {
+  display: inline-block; 
+   font-size: 20px; 
+   padding: 20px;  
+}  */
 .card-body {
    padding-bottom: 0px; 
 }

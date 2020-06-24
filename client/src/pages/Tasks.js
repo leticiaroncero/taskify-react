@@ -83,7 +83,7 @@ class Tasks extends Component {
     render() {
         return (
             <div>
-                <Button href={this.state.projectId + "/tasks/add"}>Create New Task</Button>
+                <Button className="newProject" href={this.state.projectId + "/tasks/add"}>Create New Task</Button>
 
                 <Row>
                     <Col sm style={this.style}><h1>To do</h1>
